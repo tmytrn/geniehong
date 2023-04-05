@@ -124,7 +124,7 @@ export default function Portfolio({ data, pwd, metaData }) {
             </div>
           </>
         ) : (
-          <div className="w-full h-screen flex flex-col justify-center items-center">
+          <div className="w-full h-full flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center">
               <form
                 onSubmit={(e) => {
