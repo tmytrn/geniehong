@@ -99,22 +99,22 @@ export default function Home({ data, metaData }) {
       <main
         className="w-full h-full px-4 py-16 md:p-24 flex flex-col text-white"
         style={{
-          backgroundImage: `url(${data.backgroundImages[randomIndex]})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url(${data.backgroundImages[randomIndex]})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}>
         <h1 className="lowercase text-4xl">{data.title}</h1>
-        <div className="m-auto text-xl py-24">
+        <div className="m-auto text-xl py-auto">
           <PortableText value={data.bio} components={components} />
         </div>
-        <div className="flex flex-col mb-0 mt-auto">
+        <div className="flex flex-col ">
           <p>
-            <Link href="/portfolio" className="pb-4">
+            <Link href="/portfolio" className="pb-2">
               portfolio
             </Link>
           </p>
           <p>
-            <a className="hover:cursor-pointer pb-4" href={data.cv} download>
+            <a className="hover:cursor-pointer pb-2" href={data.cv} download>
               cv
             </a>
           </p>
@@ -126,7 +126,7 @@ export default function Home({ data, metaData }) {
               onMouseOut={() => {
                 setIsEmailHovering(false);
               }}
-              className="hover:cursor-text pb-4">
+              className="hover:cursor-text">
               {isEmailHovering ? "geniehong.la@gmail.com" : "email"}
             </a>
           </p>
