@@ -10,7 +10,6 @@ export default function Portfolio({ data, pwd }) {
   const pwdRef = useRef(null);
 
   function handleSubmit(event) {
-    console.log(pwdRef.current.value);
     event.preventDefault();
     if (pwdRef.current?.value == pwd.portfolioPassword) {
       setIsUnlocked(true);
@@ -20,7 +19,6 @@ export default function Portfolio({ data, pwd }) {
     }
   }
 
-  console.log(pwd);
   return (
     <>
       <Head>

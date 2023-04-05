@@ -9,9 +9,6 @@ const components = {
 };
 
 export default function Home({ data, metaData }) {
-  console.log(data);
-  console.log(metaData);
-
   const [randomIndex, setRandomIndex] = useState(
     Math.floor(Math.random() * data.backgroundImages.length)
   );
