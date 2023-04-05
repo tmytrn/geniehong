@@ -120,13 +120,8 @@ export default function Home({ data, metaData }) {
           </p>
           <p>
             <a
-              onMouseOver={() => {
-                setIsEmailHovering(true);
-              }}
-              onMouseOut={() => {
-                setIsEmailHovering(false);
-              }}
-              className="hover:cursor-text">
+              href="mailto:geniehong.la@gmail.com"
+              className="hover:cursor-pointer">
               {isEmailHovering ? "geniehong.la@gmail.com" : "email"}
             </a>
           </p>
