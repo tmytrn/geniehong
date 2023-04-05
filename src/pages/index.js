@@ -97,14 +97,14 @@ export default function Home({ data, metaData }) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <main
-        className="w-full h-screen px-4 py-16 md:p-48 flex flex-col text-white"
+        className="w-full h-full px-4 py-16 md:p-24 flex flex-col text-white"
         style={{
           backgroundImage: `url(${data.backgroundImages[randomIndex]})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}>
         <h1 className="lowercase text-4xl">{data.title}</h1>
-        <div className="m-auto text-xl">
+        <div className="m-auto text-xl py-24">
           <PortableText value={data.bio} components={components} />
         </div>
         <div className="flex flex-col mb-0 mt-auto">

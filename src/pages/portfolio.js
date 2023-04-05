@@ -106,11 +106,11 @@ export default function Portfolio({ data, pwd, metaData }) {
         {isUnlocked ? (
           <>
             <Link
-              className="w-full text-3xl text-left mx-4 md:mx-24 py-4 mb-4 border-b-white border-solid border-b-[1px]"
+              className="w-full text-3xl text-left mx-4 md:mx-24 py-4 mb-4 "
               href="/">
               genie hong
             </Link>
-            <div className="flex flex-col justify-center items-center px-4 md:px-24">
+            <div className="flex flex-col justify-center items-center px-4 md:px-24 bg-gray-200">
               {data.images.map((image, key) => (
                 <Image
                   src={image}
