@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { getPortfolioData, getPortfolioPass } from "../../data";
+import { getPortfolioData, getPortfolioPass, getMetaData } from "../../data";
 import { useState, useRef } from "react";
 
 export default function Portfolio({ data, pwd, metaData }) {
