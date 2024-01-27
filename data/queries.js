@@ -22,6 +22,12 @@ export const portfolioQuery = `
 } 
 `;
 
+export const projectsQuery = `
+*[_id== "projects"]{
+  "images": projectsImages[].asset->url,
+} 
+`;
+
 export const portfolioPass = `
 *[_type == "siteconfig"]{
 portfolioPassword

@@ -1,17 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import { getHomeData, getMetaData } from "../../data";
-import { PortableText } from "@portabletext/react";
-import { useState, useEffect } from "react";
+import Image from "next/image";
+import { getProjectsData, getMetaData } from "../../data";
+import { useState, useRef } from "react";
 
-const components = {
-  block: ({ children }) => <p className="last:pt-12">{children}</p>,
-};
-
-export default function Home({ data, metaData }) {
-  const [randomIndex, setRandomIndex] = useState(
-    Math.floor(Math.random() * data.backgroundImages.length)
-  );
+export default function Projects({ data, metaData }) {
+  console.log(data);
   return (
     <>
       <Head>
@@ -95,40 +89,24 @@ export default function Home({ data, metaData }) {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main
-        className="w-full h-screen px-4 py-16 md:p-24 flex flex-col text-white"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url(${data.backgroundImages[randomIndex]})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}>
-        <h1 className="lowercase text-4xl">{data.title}</h1>
-        <div className="m-auto text-xl py-auto">
-          <PortableText value={data.bio} components={components} />
-        </div>
-        <div className="flex flex-col ">
-          <p>
-            <Link href="/projects" className="pb-2">
-              projects
-            </Link>
-          </p>
-          <p>
-            <Link href="/portfolio" className="pb-2">
-              portfolio
-            </Link>
-          </p>
-          <p>
-            <a className="hover:cursor-pointer pb-2" href={data.cv} download>
-              cv
-            </a>
-          </p>
-          <p>
-            <a
-              href="mailto:geniehong.la@gmail.com"
-              className="hover:cursor-pointer">
-              email
-            </a>
-          </p>
+      <main className="w-full bg-projects px-4 py-16 md:p-24 ">
+        {" "}
+        <h1 className="lowercase text-4xl text-white ">
+          <Link href={"/"} className={"hover:cursor-pointer"}>
+            genie hong
+          </Link>
+        </h1>
+        <div className="w-full bg-projects grid grid-cols-2 gap-6 md:gap-8 pt-8">
+          {data.images.map((image, key) => (
+            <Image
+              src={image}
+              key={key}
+              width={600}
+              height={1200}
+              alt={"portfolio image" + key}
+              className="pb-4 md:pb-4 bg-projects object-cover w-full h-full"
+            />
+          ))}
         </div>
       </main>
     </>
@@ -136,14 +114,14 @@ export default function Home({ data, metaData }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const result = await getHomeData();
+  const result = await getProjectsData();
   const metaData = await getMetaData();
 
   return {
     props: {
       data: result[0],
       metaData: metaData[0],
-      page: "index",
+      page: "projects",
       preview,
     },
     revalidate: 10,

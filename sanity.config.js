@@ -36,6 +36,13 @@ export default defineConfig({
               .child(
                 S.document().schemaType("portfolio").documentId("portfolio")
               ),
+
+            S.listItem()
+              .title("Projects")
+              .id("projects")
+              .child(
+                S.document().schemaType("projects").documentId("projects")
+              ),
           ]),
     }),
     ,

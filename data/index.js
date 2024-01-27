@@ -16,6 +16,11 @@ export const getPortfolioData = async () => {
   return data;
 };
 
+export const getProjectsData = async () => {
+  const data = await getClient().fetch(queries.projectsQuery);
+  return data;
+};
+
 export const getPortfolioPass = async () => {
   const data = await getClient().fetch(queries.portfolioPass);
   return data;

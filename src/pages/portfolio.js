@@ -102,7 +102,7 @@ export default function Portfolio({ data, pwd, metaData }) {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main className="w-full h-full bg-gray-200">
+      <main className="w-full h-screen bg-gray-200">
         {isUnlocked ? (
           <>
             <Link
