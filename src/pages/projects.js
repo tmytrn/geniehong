@@ -5,7 +5,7 @@ import { getProjectsData, getMetaData } from "../../data";
 import { useState, useRef } from "react";
 
 export default function Projects({ data, metaData }) {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <Head>
@@ -89,14 +89,14 @@ export default function Projects({ data, metaData }) {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main className="w-full bg-projects px-4 py-16 md:p-24 ">
+      <main className="w-full  bg-projects px-4 py-16 md:p-24 ">
         {" "}
         <h1 className="lowercase text-4xl text-white ">
           <Link href={"/"} className={"hover:cursor-pointer"}>
             genie hong
           </Link>
         </h1>
-        <div className="w-full bg-projects grid grid-cols-2 gap-6 md:gap-8 pt-8">
+        <div className="grid grid-cols-2 gap-4 md:gap-8 pt-8">
           {data.images.map((image, key) => (
             <Image
               src={image}
@@ -104,7 +104,7 @@ export default function Projects({ data, metaData }) {
               width={600}
               height={1200}
               alt={"portfolio image" + key}
-              className="pb-4 md:pb-4 bg-projects object-cover w-full h-full"
+              className="pb-0 md:pb-4 object-cover w-full h-full"
             />
           ))}
         </div>
