@@ -50,3 +50,9 @@ a {
 .bg-projects {
   background-color: #4e414f;
 }
+
+.bg-plum {
+  background: url('/plum-background.jpeg');
+  background-position: center;
+  background-size: cover;
+}

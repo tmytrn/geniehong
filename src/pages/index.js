@@ -103,10 +103,10 @@ export default function Home({ data, metaData }) {
           backgroundSize: "cover",
         }}>
         <h1 className="lowercase text-4xl pb-24">{data.title}</h1>
-        <div className="m-auto text-xl py-auto pb-24">
+        <div className="m-auto text-xl">
           <PortableText value={data.bio} components={components} />
         </div>
-        <div className="flex flex-col mt-auto mb-0 justify-end">
+        <div className="flex flex-col mt-auto mb-0 justify-end h-full">
           <p>
             <Link href="/projects" className="pb-2">
               projects

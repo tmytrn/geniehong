@@ -89,14 +89,40 @@ export default function Projects({ data, metaData }) {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main className="w-full  bg-projects px-4 py-16 md:p-24 ">
-        {" "}
-        <h1 className="lowercase text-4xl text-white ">
-          <Link href={"/"} className={"hover:cursor-pointer"}>
-            genie hong
-          </Link>
-        </h1>
-        <div className="grid grid-cols-2 gap-4 md:gap-8 pt-8">
+      <main className="w-full overflow-auto ">
+        <div className="absolute top-0 left-0 w-full h-full z-[-1] bg-plum"></div>
+        <div className=" static md:fixed top-0 w-full md:w-1/4 h-auto md:h-full flex flex-col justify-between px-4 py-16 md:py-24 md:pl-24 md:pr-2">
+          <h1 className="lowercase text-4xl text-white ">
+            <Link href={"/"} className={"hover:cursor-pointer"}>
+              genie hong
+            </Link>
+          </h1>
+          <div className="static  flex-col mt-auto mb-0 justify-end h-full w-full text-white hidden md:flex">
+            <p>
+              <Link href="/projects" className="pb-2">
+                projects
+              </Link>
+            </p>
+            <p>
+              <Link href="/portfolio" className="pb-2">
+                portfolio
+              </Link>
+            </p>
+            <p>
+              <a className="hover:cursor-pointer pb-2" href={data.cv} download>
+                cv
+              </a>
+            </p>
+            <p>
+              <a
+                href="mailto:geniehong.la@gmail.com"
+                className="hover:cursor-pointer">
+                email
+              </a>
+            </p>
+          </div>
+        </div>
+        <div className="static grid grid-cols-2 gap-4 md:gap-8 overflow-y-auto w-full md:w-3/4 ml-auto mr-0 py-4 md:py-24 px-4 md:pl-0 md:pr-12 bg-transparent">
           {data.images.map((image, key) => (
             <Image
               src={image}
@@ -104,7 +130,7 @@ export default function Projects({ data, metaData }) {
               width={600}
               height={1200}
               alt={"portfolio image" + key}
-              className="pb-0 md:pb-4 object-cover w-full h-full"
+              className="pb-0 md:pb-4 object-cover w-full h-full bg-transparent"
             />
           ))}
         </div>
