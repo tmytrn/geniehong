@@ -96,7 +96,7 @@ export default function Home({ data, metaData }) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <main
-        className="w-full h-full px-4 py-16 md:p-24 flex flex-col text-white"
+        className="w-full h-full px-4 py-16 md:p-24 flex flex-col text-white justify-between"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url(${data.backgroundImages[randomIndex]})`,
           backgroundPosition: "center",
@@ -106,7 +106,7 @@ export default function Home({ data, metaData }) {
         <div className="m-auto text-xl py-auto pb-24">
           <PortableText value={data.bio} components={components} />
         </div>
-        <div className="flex flex-col mt-auto h-full">
+        <div className="flex flex-col mt-auto mb-0 justify-end">
           <p>
             <Link href="/projects" className="pb-2">
               projects
